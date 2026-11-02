@@ -1,0 +1,1107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Interactive plan for a minimal bedroom: king bed, floating desk, split AC, and a scored door spot.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='3' width='26' height='26' fill='none' stroke='%231A2125' stroke-width='3'/%3E%3Crect x='9' y='16' width='14' height='10' fill='%231A2125'/%3E%3Cpath d='M3 10h8' stroke='%232350D8' stroke-width='3'/%3E%3C/svg%3E">
+<style>[hidden]{display:none!important}img{max-width:100%}</style>
+<title>Minimal King Room</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#ECEFEE;
+  --sheet:#F7F9F8;
+  --ink:#1A2125;
+  --ink-2:#44515A;
+  --muted:#6C7980;
+  --line:#C5CECE;
+  --line-2:#DEE4E3;
+  --wall:#283136;
+  --floor:#FCFDFC;
+  --oak:#E6D8C1;
+  --oak-edge:#A88F6A;
+  --bed:#FFFFFF;
+  --duvet:#E3E9E8;
+  --chair:#1A2125;
+  --ac:#DDE4E7;
+  --accent:#2350D8;
+  --on-accent:#FFFFFF;
+  --accent-soft:rgba(35,80,216,.10);
+  --good:#1F8455;
+  --warn:#AD7106;
+  --bad:#C0392F;
+  --none:#C3CBCB;
+  --good-bg:rgba(31,132,85,.12);
+  --warn-bg:rgba(173,113,6,.14);
+  --bad-bg:rgba(192,57,47,.12);
+  --sans:'Barlow',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;
+  --cond:'Barlow Condensed','Arial Narrow',ui-sans-serif,system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#111517;--sheet:#171C1F;--ink:#E4E9EA;--ink-2:#B3BDC2;--muted:#85929A;--line:#2F383D;--line-2:#242B2F;
+    --wall:#C3CDD1;--floor:#1C2225;--oak:#56493A;--oak-edge:#8E7858;--bed:#252C30;--duvet:#2F373B;--chair:#DCE3E5;--ac:#2C3539;
+    --accent:#86A4FF;--on-accent:#0B1233;--accent-soft:rgba(134,164,255,.16);
+    --good:#56C58E;--warn:#E2AD45;--bad:#F07B71;--none:#3A4549;
+    --good-bg:rgba(86,197,142,.14);--warn-bg:rgba(226,173,69,.15);--bad-bg:rgba(240,123,113,.15);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#111517;--sheet:#171C1F;--ink:#E4E9EA;--ink-2:#B3BDC2;--muted:#85929A;--line:#2F383D;--line-2:#242B2F;
+  --wall:#C3CDD1;--floor:#1C2225;--oak:#56493A;--oak-edge:#8E7858;--bed:#252C30;--duvet:#2F373B;--chair:#DCE3E5;--ac:#2C3539;
+  --accent:#86A4FF;--on-accent:#0B1233;--accent-soft:rgba(134,164,255,.16);
+  --good:#56C58E;--warn:#E2AD45;--bad:#F07B71;--none:#3A4549;
+  --good-bg:rgba(86,197,142,.14);--warn-bg:rgba(226,173,69,.15);--bad-bg:rgba(240,123,113,.15);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 15px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1200px;margin:0 auto;padding-inline:clamp(16px,4vw,40px);padding-block:36px 80px;display:grid;gap:40px}
+.eyebrow{font:500 11.5px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font:700 clamp(40px,6.6vw,70px)/.95 var(--cond);letter-spacing:.005em;text-transform:uppercase;margin:10px 0 14px;text-wrap:balance}
+.lede{max-width:62ch;margin:0;color:var(--ink-2);font-size:16px}
+h2{font:600 22px/1.1 var(--cond);letter-spacing:.04em;text-transform:uppercase;margin:0;text-wrap:balance}
+h2 .no{font:500 12px var(--mono);color:var(--muted);letter-spacing:.06em;margin-right:10px;vertical-align:3px}
+h3{font:600 13px/1.2 var(--cond);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 10px;padding-bottom:7px;border-bottom:1px solid var(--line)}
+
+.titleblock{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border:1.5px solid var(--ink);background:var(--sheet)}
+.titleblock>div{padding:12px 16px 14px;border-left:1px solid var(--line);display:grid;gap:5px;align-content:start}
+.titleblock>div:first-child{border-left:0}
+.tb-k{font:500 10.5px/1.2 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.tb-v{font:600 23px/1.1 var(--cond);letter-spacing:.01em;display:flex;align-items:center;gap:8px;min-height:28px;font-variant-numeric:tabular-nums}
+.tb-s{font-size:13px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+@media (max-width:760px){
+  .titleblock{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .titleblock>div:nth-child(odd){border-left:0}
+  .titleblock>div:nth-child(n+3){border-top:1px solid var(--line)}
+  .titleblock>div:last-child{grid-column:1/-1}
+}
+
+.work{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:28px;align-items:start}
+.sheet{background:var(--sheet);border:1px solid var(--line);padding:16px;display:grid;gap:12px;margin:0}
+.fig-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 16px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12.5px;color:var(--ink-2)}
+.legend i{display:inline-block;width:16px;height:5px;margin-right:6px;vertical-align:middle}
+figcaption{font-size:13px;color:var(--muted);max-width:70ch}
+#plan{display:block;width:100%;height:auto;max-height:80vh;touch-action:pan-y}
+#plan:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+
+.panel{display:grid;gap:24px}
+.fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.fields.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.field label{display:block;font-size:12px;color:var(--muted);margin-bottom:4px;white-space:nowrap}
+.num{display:flex;align-items:center;border:1px solid var(--line);background:var(--floor);border-radius:3px}
+.num input{width:100%;min-width:0;border:0;background:transparent;font:500 15px var(--mono);color:var(--ink);padding:8px 2px 8px 10px}
+.num input:focus{outline:none}
+.num:focus-within{outline:2px solid var(--accent);outline-offset:1px}
+.num span{padding-right:10px;color:var(--muted);font-size:13px}
+.area{margin:10px 0 0;font:500 13px var(--mono);color:var(--ink);font-variant-numeric:tabular-nums}
+.hint{font-size:12.5px;color:var(--muted);margin:8px 0 0}
+.stack{display:grid;gap:12px}
+.seg{border:0;padding:0;margin:0;min-width:0}
+.seg legend{font-size:12px;color:var(--muted);padding:0;margin-bottom:4px}
+.opts{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;border:1px solid var(--line);border-radius:3px;overflow:hidden;background:var(--floor)}
+.opts label{position:relative;cursor:pointer;display:block}
+.opts input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer}
+.opts span{display:block;height:100%;text-align:center;padding:8px 4px;font-size:13.5px;font-weight:500;line-height:1.2;border-left:1px solid var(--line)}
+.opts label:first-child span{border-left:0}
+.opts small{display:block;font:400 11px var(--mono);color:var(--muted);margin-top:3px}
+.opts input:checked+span{background:var(--ink);color:var(--sheet)}
+.opts input:checked+span small{color:inherit;opacity:.72}
+.opts input:focus-visible+span{outline:2px solid var(--accent);outline-offset:-3px}
+.slider label{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--muted);margin-bottom:2px}
+.slider output{font:500 12px var(--mono);color:var(--ink);text-align:right}
+input[type=range]{width:100%;accent-color:var(--accent);margin:4px 0 0}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+button{font:600 13.5px var(--sans);padding:8px 14px;border-radius:3px;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+button.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+button.sm{padding:5px 11px;font-size:12.5px}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.readout{font-size:14px;color:var(--ink-2);margin:0;font-variant-numeric:tabular-nums}
+.readout b{color:var(--ink)}
+.flash{font-size:12.5px;color:var(--bad);margin:0;min-height:1.2em}
+.checks{list-style:none;margin:0;padding:0}
+.checks li{display:grid;grid-template-columns:64px minmax(0,1fr);gap:10px;padding:9px 0;border-top:1px solid var(--line-2);align-items:start}
+.checks li:first-child{border-top:0;padding-top:2px}
+.checks b{display:block;font-weight:600;font-size:14px;line-height:1.3}
+.checks .m{display:block;font-size:13.5px;color:var(--ink-2);line-height:1.4}
+.pill{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:5px 7px;border-radius:2px;text-align:center;white-space:nowrap}
+.p-pass{background:var(--good-bg);color:var(--good)}
+.p-warn{background:var(--warn-bg);color:var(--warn)}
+.p-fail{background:var(--bad-bg);color:var(--bad)}
+
+.verdict{margin:0;max-width:78ch;font-size:15px;color:var(--ink-2);display:grid;gap:6px}
+.verdict b{color:var(--ink)}
+tr.cur td{background:var(--accent-soft)}
+.spot{display:block;font-size:12.5px;color:var(--ink-2);margin-top:5px;line-height:1.35}
+.inuse{font:600 10.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--accent);white-space:nowrap}
+
+.elev{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:28px;align-items:start}
+.scroll{overflow-x:auto}
+#elev{display:block;width:100%;height:auto;min-width:520px}
+.notes{margin:0;padding:0;list-style:none;display:grid;gap:10px;font-size:14.5px}
+.notes li{display:grid;grid-template-columns:62px minmax(0,1fr);gap:12px;padding-bottom:10px;border-bottom:1px solid var(--line-2)}
+.notes li:last-child{border-bottom:0}
+.notes .lv{font:500 12.5px/1.7 var(--mono);color:var(--ink)}
+
+.tbl{overflow-x:auto;background:var(--sheet);border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:14.5px}
+table.wide{min-width:860px;font-size:14px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line-2);vertical-align:top}
+tr:last-child td{border-bottom:0}
+th{font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line)}
+td.sz{font:400 13px var(--mono);white-space:nowrap}
+td.it{font-weight:600}
+.section{display:grid;gap:14px}
+.how{margin:0;padding-left:18px;display:grid;gap:6px;color:var(--ink-2);font-size:14px;max-width:80ch}
+
+@media (min-width:901px){.panel{position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px)}}
+@media (max-width:900px){.work,.elev{grid-template-columns:minmax(0,1fr)}}
+
+svg text{font-family:var(--cond)}
+.wall{fill:var(--wall)}
+.floor{fill:var(--floor)}
+.grid{stroke:var(--line-2);stroke-width:.6}
+.h-good{fill:var(--good)}.h-ok{fill:var(--warn)}.h-bad{fill:var(--bad)}.h-none{fill:var(--none)}
+.deskf{fill:var(--oak);stroke:var(--oak-edge);stroke-width:.8}
+.plat{fill:var(--oak);stroke:var(--oak-edge);stroke-width:1}
+.bench{fill:var(--floor);stroke:var(--ink-2);stroke-width:.8}
+.mon{fill:var(--ink)}
+.over{fill:none;stroke:var(--ink-2);stroke-width:.9;stroke-dasharray:4 3}
+.air{stroke:var(--muted);stroke-width:.8;stroke-dasharray:2 5;stroke-linecap:round}
+.zone{fill:none;stroke:var(--muted);stroke-width:.7;stroke-dasharray:3 3}
+.chairf{fill:var(--chair)}
+.bedf{fill:var(--bed);stroke:var(--ink);stroke-width:1.1}
+.hb{fill:var(--ink-2)}
+.pillow{fill:var(--floor);stroke:var(--ink-2);stroke-width:.7}
+.duvet{fill:var(--duvet);stroke:var(--ink-2);stroke-width:.7}
+.fold{stroke:var(--ink-2);stroke-width:.6}
+.dim{stroke:var(--ink-2);stroke-width:.6}
+.tk{stroke:var(--ink-2);stroke-width:1.1}
+.dimt{font-family:var(--mono);font-size:8.5px;fill:var(--ink-2)}
+.lbl{font-size:9px;font-weight:600;letter-spacing:.08em;fill:var(--muted)}
+.lbl-ink{fill:var(--ink)}
+.jamb{stroke:var(--wall);stroke-width:1.4}
+.wedge{fill:var(--accent-soft)}
+.swing{fill:none;stroke:var(--accent);stroke-width:.8;stroke-dasharray:3 2}
+.leaf{stroke:var(--accent);stroke-width:3.2;stroke-linecap:round}
+.hinge{fill:var(--accent)}
+.pocket{fill:var(--floor);stroke:var(--accent);stroke-width:.6;stroke-dasharray:2 2}
+.panelf{fill:var(--accent)}
+.ghost{fill:none;stroke:var(--accent);stroke-width:.7;stroke-dasharray:2 2}
+.track{stroke:var(--ink-2);stroke-width:.8}
+.sight{stroke-width:1;stroke-dasharray:.1 3.4;stroke-linecap:round}
+.s-pass{stroke:var(--good)}.s-warn{stroke:var(--warn)}.s-fail{stroke:var(--bad)}
+.eyept{fill:var(--ink-2)}
+.walk{fill:none;stroke:var(--accent);stroke-width:2;stroke-dasharray:.1 5;stroke-linecap:round;stroke-linejoin:round}
+.arrow{fill:var(--accent)}
+.hit{fill:transparent;pointer-events:all;cursor:pointer;touch-action:none}
+.grip{fill:var(--accent);pointer-events:none}
+.griphit{fill:transparent;pointer-events:all;cursor:ew-resize;touch-action:none}
+.face{fill:var(--floor)}
+.eye{stroke:var(--muted);stroke-width:.6;stroke-dasharray:6 4}
+.lvl{stroke:var(--ink-2);stroke-width:.6}
+.lvlm{fill:var(--ink-2)}
+.lvn{font-family:var(--mono);font-size:8.5px;fill:var(--ink)}
+.acu{fill:var(--ac);stroke:var(--ink-2);stroke-width:.8}
+.vent{stroke:var(--ink-2);stroke-width:.6}
+.hidden{fill:none;stroke:var(--muted);stroke-width:.7;stroke-dasharray:2 2}
+.outlet{fill:var(--floor);stroke:var(--ink-2);stroke-width:.7}
+.screen{fill:var(--sheet);stroke:var(--ink);stroke-width:1}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Bedroom plan · scale read from your sketch · 1 m ≈ 150 px</div>
+    <h1>Minimal King Room</h1>
+    <p class="lede">Wall-to-wall king bed facing the screen, a 120 × 70 cm floating desk, split AC above it. Tap a wall on the plan to place the door. The colored band around the walls shows where a door works.</p>
+  </header>
+
+  <section class="titleblock" aria-label="Summary">
+    <div><span class="tb-k">Bed fit</span><span class="tb-v" id="sumFit"></span><span class="tb-s" id="sumFitSub"></span></div>
+    <div><span class="tb-k">Floor area</span><span class="tb-v" id="sumArea"></span><span class="tb-s" id="sumAreaSub"></span></div>
+    <div><span class="tb-k">Minimum room</span><span class="tb-v" id="sumMin"></span><span class="tb-s" id="sumMinSub"></span></div>
+    <div><span class="tb-k">Door</span><span class="tb-v" id="sumDoor"></span><span class="tb-s" id="sumDoorSub"></span></div>
+    <div><span class="tb-k">Aircon</span><span class="tb-v" id="sumAc"></span><span class="tb-s" id="sumAcSub"></span></div>
+  </section>
+
+  <section class="work">
+    <figure class="sheet">
+      <div class="fig-head">
+        <h2><span class="no">A1</span>Floor plan</h2>
+        <div class="legend" aria-label="Door band legend">
+          <span><i style="background:var(--good)"></i>Door works</span>
+          <span><i style="background:var(--warn)"></i>Compromise</span>
+          <span><i style="background:var(--bad)"></i>Avoid</span>
+          <span><i style="background:var(--none)"></i>No room</span>
+        </div>
+      </div>
+      <svg id="plan" tabindex="0" role="img" aria-label="Floor plan. Tap a wall to move the door. Arrow keys move it 5 cm."></svg>
+      <figcaption>Left and right as you face the desk. Grid is 50 cm. Dashed lines mark things overhead or hidden: the AC, its air throw, and the door pocket inside the wall. Blue dots trace your walk from the door to the bed. Thin dotted lines show the view to the door from the pillow and from the chair.</figcaption>
+    </figure>
+
+    <aside class="panel">
+      <div>
+        <h3>Room</h3>
+        <div class="fields">
+          <div class="field"><label for="inW">Width</label><div class="num"><input id="inW" type="number" inputmode="decimal" min="1.8" max="6" step="0.05"><span>m</span></div></div>
+          <div class="field"><label for="inD">Depth</label><div class="num"><input id="inD" type="number" inputmode="decimal" min="2.4" max="8" step="0.05"><span>m</span></div></div>
+          <div class="field"><label for="inH">Ceiling</label><div class="num"><input id="inH" type="number" inputmode="decimal" min="2.3" max="4" step="0.05"><span>m</span></div></div>
+        </div>
+        <p class="area" id="roomArea"></p>
+        <p class="hint">Width and ceiling come from your sketch. Depth is a guess. Enter your real depth.</p>
+      </div>
+
+      <div class="stack">
+        <h3>Desk</h3>
+        <div class="fields two">
+          <div class="field"><label for="inDl">Length</label><div class="num"><input id="inDl" type="number" inputmode="decimal" min="0.8" max="6" step="0.05"><span>m</span></div></div>
+          <div class="field"><label for="inDk">Depth</label><div class="num"><input id="inDk" type="number" inputmode="decimal" min="0.4" max="1" step="0.05"><span>m</span></div></div>
+        </div>
+        <fieldset class="seg"><legend>Quick length (cm)</legend>
+          <div class="opts">
+            <label><input type="radio" name="deskL" id="dl120" value="1.2"><span>120</span></label>
+            <label><input type="radio" name="deskL" id="dl160" value="1.6"><span>160</span></label>
+            <label><input type="radio" name="deskL" id="dl180" value="1.8"><span>180</span></label>
+            <label><input type="radio" name="deskL" id="dl200" value="2"><span>200</span></label>
+            <label><input type="radio" name="deskL" id="dlFull" value="0"><span>Full</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="seg"><legend>Position</legend>
+          <div class="opts">
+            <label><input type="radio" name="deskPos" id="posL" value="left"><span>Left</span></label>
+            <label><input type="radio" name="deskPos" id="posC" value="center"><span>Center</span></label>
+            <label><input type="radio" name="deskPos" id="posR" value="right"><span>Right</span></label>
+          </div>
+        </fieldset>
+        <p class="hint" style="margin:0">Or drag the blue handles at the desk ends on the plan.</p>
+      </div>
+
+      <div class="stack">
+        <h3>Bed</h3>
+        <fieldset class="seg"><legend>Size</legend>
+          <div class="opts">
+            <label><input type="radio" name="bed" id="bedDb" value="db"><span>Double<small>137 × 190</small></span></label>
+            <label><input type="radio" name="bed" id="bedQn" value="qn"><span>Queen<small>152 × 190</small></span></label>
+            <label><input type="radio" name="bed" id="bedPh" value="ph"><span>PH King<small>183 × 190</small></span></label>
+            <label><input type="radio" name="bed" id="bedUs" value="us"><span>US King<small>193 × 203</small></span></label>
+          </div>
+        </fieldset>
+        <fieldset class="seg"><legend>Frame</legend>
+          <div class="opts">
+            <label><input type="radio" name="frame" id="frWall" value="wall"><span>Wall to wall</span></label>
+            <label><input type="radio" name="frame" id="frBed" value="bed"><span>Bed only</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="seg"><legend>Headboard</legend>
+          <div class="opts">
+            <label><input type="radio" name="orient" id="orBack" value="back"><span>Back wall<small>faces screen</small></span></label>
+            <label><input type="radio" name="orient" id="orSide" value="side"><span>Side wall<small>sideways</small></span></label>
+          </div>
+        </fieldset>
+        <fieldset class="seg"><legend id="sideLbl">Mattress on</legend>
+          <div class="opts">
+            <label><input type="radio" name="side" id="sdLeft" value="left"><span>Left</span></label>
+            <label><input type="radio" name="side" id="sdCenter" value="center"><span>Center</span></label>
+            <label><input type="radio" name="side" id="sdRight" value="right"><span>Right</span></label>
+          </div>
+        </fieldset>
+        <p class="readout" id="bedRead"></p>
+      </div>
+
+      <div class="stack">
+        <h3>Door</h3>
+        <fieldset class="seg"><legend>Type</legend>
+          <div class="opts">
+            <label><input type="radio" name="dtype" id="dtPocket" value="pocket"><span>Pocket</span></label>
+            <label><input type="radio" name="dtype" id="dtOut" value="out"><span>Swing out</span></label>
+            <label><input type="radio" name="dtype" id="dtIn" value="in"><span>Swing in</span></label>
+            <label><input type="radio" name="dtype" id="dtSlide" value="slide"><span>Slide</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="seg"><legend>Wall</legend>
+          <div class="opts">
+            <label><input type="radio" name="dwall" id="dwTop" value="top"><span>Desk</span></label>
+            <label><input type="radio" name="dwall" id="dwLeft" value="left"><span>Left</span></label>
+            <label><input type="radio" name="dwall" id="dwBack" value="bottom"><span>Back</span></label>
+            <label><input type="radio" name="dwall" id="dwRight" value="right"><span>Right</span></label>
+          </div>
+        </fieldset>
+        <div class="slider">
+          <label for="doorPos"><span>Position along the wall</span><output id="doorPosOut" for="doorPos"></output></label>
+          <input id="doorPos" type="range" min="0" max="1000" step="1">
+        </div>
+        <fieldset class="seg"><legend>Door width</legend>
+          <div class="opts">
+            <label><input type="radio" name="dw" id="dw70" value="0.7"><span>70 cm</span></label>
+            <label><input type="radio" name="dw" id="dw80" value="0.8"><span>80 cm</span></label>
+          </div>
+        </fieldset>
+        <div class="btns">
+          <button type="button" class="primary" id="btnBest">Best spot</button>
+          <button type="button" id="btnFlip">Flip side</button>
+        </div>
+        <p class="readout" id="doorRead"></p>
+        <p class="flash" id="flash" aria-live="polite"></p>
+      </div>
+
+      <div>
+        <h3>Door checks</h3>
+        <ul class="checks" id="checks"></ul>
+      </div>
+    </aside>
+  </section>
+
+  <section class="section">
+    <h2><span class="no">A2</span>Door types for this room</h2>
+    <div class="verdict" id="doorVerdict"></div>
+    <div class="tbl">
+      <table class="wide">
+        <thead><tr><th>Door</th><th>Floor it takes</th><th>When open</th><th>AC seal</th><th>Needs</th><th>At your spot</th><th><span hidden>Action</span></th></tr></thead>
+        <tbody id="doorTypes"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2><span class="no">A3</span>Desk wall, facing it</h2>
+    <div class="elev">
+      <figure class="sheet">
+        <div class="scroll"><svg id="elev" role="img" aria-label="Desk wall elevation with desk, chair, monitor and split AC"></svg></div>
+      </figure>
+      <ul class="notes" id="notes"></ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2><span class="no">A4</span>The kit</h2>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Item</th><th>Size</th><th>Why this one</th></tr></thead>
+        <tbody id="kit"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2><span class="no">A5</span>How this was read</h2>
+    <ul class="how">
+      <li>Your sketch puts the desk top 113 px above the floor. At 75 cm, that gives 1 m ≈ 150 px.</li>
+      <li>So the desk wall is 2.60 m wide and the ceiling 2.65 m high.</li>
+      <li>Cross-check: the AC in your sketch then measures 94 cm wide, a normal split-unit size.</li>
+      <li>Bed: a wall-to-wall platform, headboard on the back wall so you face the screen. The mattress sits centered on the screen. The platform on each side becomes a ledge.</li>
+      <li>Screen: your sketch draws it about 98 cm wide, a 42–43 in screen. That size works from both the chair and the pillow.</li>
+      <li>Desk: 120 × 70 cm, centered on the bed, screen and AC. You named 120 as ideal and 200 as the max.</li>
+      <li>Bed sizes follow the local 75 in length: Double 54 in, Queen 60 in, PH King 72 in wide. US King is 76 × 80 in.</li>
+      <li>Areas are in m² (sqm). Free floor is the room minus the bed and desk footprints.</li>
+      <li>A swing-in door takes a quarter circle of floor: π × width² ÷ 4.</li>
+      <li>Door rules: see the door from bed, keep it out of your back at the desk, keep the bed out of the doorway view, keep a clear walk to bed.</li>
+    </ul>
+  </section>
+</div>
+
+<script>
+(() => {
+  const BEDS = {
+    db: { w: 1.37, l: 1.90, name: 'PH Double', size: '137 × 190 cm', inch: '54 × 75 in' },
+    qn: { w: 1.52, l: 1.90, name: 'PH Queen', size: '152 × 190 cm', inch: '60 × 75 in' },
+    ph: { w: 1.83, l: 1.90, name: 'PH King', size: '183 × 190 cm', inch: '72 × 75 in' },
+    us: { w: 1.93, l: 2.03, name: 'US King', size: '193 × 203 cm', inch: '76 × 80 in' },
+  };
+  const HB = 0.06, CHAIR_W = 0.65, CHAIR_D = 0.9, BODY = 0.28, EDGE = 0.05, STEP = 0.05, PANEL = 0.08;
+  const PTS = { pass: 2, warn: 1, fail: 0 };
+  const LV = { good: 'pass', ok: 'warn', bad: 'fail' };
+  const LV_WORD = { good: 'Works', ok: 'Compromise', bad: 'Avoid' };
+  const ST_WORD = { pass: 'Pass', warn: 'Watch', fail: 'Fail' };
+  const DIRS = [[1, 0], [-1, 0], [0, 1], [0, -1], [1, 1], [1, -1], [-1, 1], [-1, -1]];
+  const TYPES = {
+    pocket: { name: 'Pocket', seal: ['warn', 'Fair'], needs: '85 cm of empty wall beside the opening, built as a pocket frame. No switch, outlet or pipe in that stretch.', kit: 'Hides in the wall when open. Add brush seals to hold the AC’s cold air.' },
+    out: { name: 'Swing out', seal: ['pass', 'Good'], needs: '90 cm of clear hallway outside. Hinge pins that can’t be pulled from the hallway.', kit: 'Takes no floor inside and seals like a normal door.' },
+    in: { name: 'Swing in', seal: ['pass', 'Good'], needs: 'A standard frame. Nothing else.', kit: 'Standard hinged door. Add a stopper so it rests clear of the desk.' },
+    slide: { name: 'Surface slide', seal: ['fail', 'Poor'], needs: '85 cm of clear wall beside the opening, inside the room. Brush seals and a floor guide.', kit: 'Easiest retrofit. Leaks the most cold air, so add brush seals.' },
+  };
+  const KEY = 'minimal-king-room-v4';
+  const SCREEN = { w: 0.95, h: 0.54, y: 0.1, bottom: 1.0 };
+
+  const S = { W: 2.6, D: 3.6, H: 2.65, deskD: 0.7, deskL: 1.2, deskPos: 'center', bed: 'ph', frame: 'wall', orient: 'back', side: 'center', doorW: 0.8, doorType: 'pocket', door: null };
+  try { const v = JSON.parse(localStorage.getItem(KEY) || 'null'); if (v && typeof v === 'object') Object.assign(S, v); } catch (e) {}
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
+
+  const $ = (id) => document.getElementById(id);
+  const u = (m) => +(m * 100).toFixed(1);
+  const cm = (m) => `${Math.round(m * 100)} cm`;
+  const mt = (m) => `${m.toFixed(2)} m`;
+  const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+  const hp = (a) => (a <= 15 ? 1 : a <= 22 ? 1.5 : a <= 30 ? 2 : 2.5);
+  const HP_MAX = { 1: 15, 1.5: 22, 2: 30, 2.5: 40 };
+  const sqm = (a) => `${a.toFixed(2)} m²`;
+
+  const pt = (w, a, b) => [w.o[0] + w.a[0] * a + w.n[0] * b, w.o[1] + w.a[1] * a + w.n[1] * b];
+  const rectUV = (w, a0, a1, b0, b1) => {
+    const p = pt(w, a0, b0), q = pt(w, a1, b1);
+    return { x: Math.min(p[0], q[0]), y: Math.min(p[1], q[1]), w: Math.abs(q[0] - p[0]), h: Math.abs(q[1] - p[1]) };
+  };
+  const overlap = (r, s) => {
+    const x0 = Math.max(r.x, s.x), y0 = Math.max(r.y, s.y), x1 = Math.min(r.x + r.w, s.x + s.w), y1 = Math.min(r.y + r.h, s.y + s.h);
+    return x1 > x0 + 1e-6 && y1 > y0 + 1e-6 ? { x: x0, y: y0, w: x1 - x0, h: y1 - y0 } : null;
+  };
+  const distPR = (p, r) => Math.hypot(Math.max(r.x - p[0], 0, p[0] - r.x - r.w), Math.max(r.y - p[1], 0, p[1] - r.y - r.h));
+  const distPS = (p, a, b) => {
+    const dx = b[0] - a[0], dy = b[1] - a[1];
+    const t = clamp(((p[0] - a[0]) * dx + (p[1] - a[1]) * dy) / (dx * dx + dy * dy || 1), 0, 1);
+    return Math.hypot(p[0] - a[0] - t * dx, p[1] - a[1] - t * dy);
+  };
+  const inRect = (p, r) => p[0] >= r.x && p[0] <= r.x + r.w && p[1] >= r.y && p[1] <= r.y + r.h;
+  const ang = (f, v) => Math.acos(clamp((f[0] * v[0] + f[1] * v[1]) / (Math.hypot(v[0], v[1]) || 1), -1, 1)) * 180 / Math.PI;
+
+  const walls = () => ({
+    top: { o: [0, 0], a: [1, 0], n: [0, 1], len: S.W, name: 'Desk wall' },
+    bottom: { o: [0, S.D], a: [1, 0], n: [0, -1], len: S.W, name: 'Back wall' },
+    left: { o: [0, 0], a: [0, 1], n: [1, 0], len: S.D, name: 'Left wall' },
+    right: { o: [S.W, 0], a: [0, 1], n: [-1, 0], len: S.D, name: 'Right wall' },
+  });
+
+  const cellPt = (G, k) => [((k % G.nx) + 0.5) * G.gx, (Math.floor(k / G.nx) + 0.5) * G.gy];
+  const cells = (G, r) => {
+    const out = [];
+    const i0 = Math.max(0, Math.floor(r.x / G.gx)), i1 = Math.min(G.nx - 1, Math.floor((r.x + r.w) / G.gx));
+    const j0 = Math.max(0, Math.floor(r.y / G.gy)), j1 = Math.min(G.ny - 1, Math.floor((r.y + r.h) / G.gy));
+    for (let j = j0; j <= j1; j++) for (let i = i0; i <= i1; i++) {
+      const k = j * G.nx + i;
+      if (inRect(cellPt(G, k), r)) out.push(k);
+    }
+    return out;
+  };
+
+  const layout = () => {
+    const b = BEDS[S.bed], W = S.W, D = S.D, DK = S.deskD, right = S.side === 'right', center = S.side === 'center', w2w = S.frame === 'wall';
+    const L = { b, w2w, walls: walls() };
+    if (S.orient === 'back') {
+      const w = b.w, h = b.l + HB, x = center ? (W - w) / 2 : right ? W - w : 0;
+      L.mat = { x, y: D - h, w, h };
+      L.P = [x + w / 2, D - HB - 0.3];
+      L.F = [0, -1];
+    } else {
+      const w = b.l + HB, h = b.w, x = right ? W - w : 0;
+      L.mat = { x, y: D - h, w, h };
+      L.P = [right ? W - HB - 0.3 : HB + 0.3, D - h / 2];
+      L.F = [right ? -1 : 1, 0];
+    }
+    const m = L.mat;
+    L.bed = w2w ? { x: 0, y: m.y, w: W, h: m.h } : m;
+    L.spares = center ? [[0, m.x], [m.x + m.w, W]] : right ? [[0, m.x]] : [[m.x + m.w, W]];
+    L.spareW = Math.min(...L.spares.map(([a, c]) => c - a));
+    L.benchWord = S.orient === 'side' ? 'foot bench' : center ? 'ledge' : 'side bench';
+    L.access = S.orient === 'side' ? { x: m.x, y: m.y - 0.45, w: m.w, h: 0.45 }
+      : w2w ? { x: 0, y: m.y - 0.45, w: W, h: 0.45 }
+      : { x: right || center ? m.x - 0.45 : m.x + m.w, y: m.y + m.h * 0.2, w: 0.45, h: m.h * 0.6 };
+    const dl = S.deskL > 0 ? Math.min(S.deskL, W) : W;
+    const dx = S.deskPos === 'left' ? 0 : S.deskPos === 'right' ? W - dl : (W - dl) / 2;
+    const half = Math.min(SCREEN.w, dl) / 2;
+    L.desk = { x: dx, y: 0, w: dl, h: DK };
+    L.full = dl >= W - 1e-6;
+    L.sx = clamp(W / 2, dx + half, dx + dl - half);
+    L.screen = [L.sx, SCREEN.y];
+    L.screenDist = Math.hypot(L.screen[0] - L.P[0], L.screen[1] - L.P[1]);
+    L.screenAng = ang(L.F, [L.screen[0] - L.P[0], L.screen[1] - L.P[1]]);
+    L.chair = { x: L.sx - CHAIR_W / 2, y: DK, w: CHAIR_W, h: CHAIR_D };
+    L.seat = [L.sx, DK + 0.45];
+    L.gap = L.bed.y - DK;
+    L.depthNeed = DK + CHAIR_D + L.bed.h;
+    L.widthNeed = w2w ? m.w : m.w + 0.6;
+    L.free = Math.max(0.01, W * D - L.bed.w * L.bed.h - dl * DK);
+    const nx = Math.max(4, Math.round(W / STEP)), ny = Math.max(4, Math.round(D / STEP));
+    const G = { nx, ny, gx: W / nx, gy: D / ny };
+    G.base = new Uint8Array(nx * ny); G.withChair = new Uint8Array(nx * ny); G.target = new Uint8Array(nx * ny);
+    for (let k = 0; k < nx * ny; k++) {
+      const p = cellPt(G, k);
+      if (p[0] < BODY || p[0] > W - BODY || p[1] < BODY || p[1] > D - BODY) continue;
+      if (distPR(p, L.bed) < BODY || distPR(p, L.desk) < BODY) continue;
+      G.base[k] = 1;
+      if (distPR(p, L.chair) >= BODY) G.withChair[k] = 1;
+      if (inRect(p, L.access)) G.target[k] = 1;
+    }
+    L.G = G;
+    return L;
+  };
+
+  const bfs = (G, free, starts) => {
+    const n = G.nx * G.ny, prev = new Int32Array(n).fill(-2), q = new Int32Array(n);
+    let h = 0, t = 0;
+    for (const s of starts) if (free[s] && prev[s] === -2) { prev[s] = -1; q[t++] = s; }
+    while (h < t) {
+      const c = q[h++];
+      if (G.target[c]) { const path = []; for (let k = c; k !== -1; k = prev[k]) path.push(k); return path.reverse(); }
+      const i = c % G.nx, j = (c - i) / G.nx;
+      for (const [di, dj] of DIRS) {
+        const ii = i + di, jj = j + dj;
+        if (ii < 0 || jj < 0 || ii >= G.nx || jj >= G.ny) continue;
+        const k = jj * G.nx + ii;
+        if (!free[k] || prev[k] !== -2) continue;
+        if (di && dj && (!free[j * G.nx + ii] || !free[jj * G.nx + i])) continue;
+        prev[k] = c; q[t++] = k;
+      }
+    }
+    return null;
+  };
+
+  const withSeg = (G, src, a, b) => {
+    const f = src.slice();
+    const box = { x: Math.min(a[0], b[0]) - BODY, y: Math.min(a[1], b[1]) - BODY, w: Math.abs(b[0] - a[0]) + 2 * BODY, h: Math.abs(b[1] - a[1]) + 2 * BODY };
+    for (const k of cells(G, box)) if (distPS(cellPt(G, k), a, b) < BODY) f[k] = 0;
+    return f;
+  };
+
+  const walkCheck = (L, w, r, seg) => {
+    const G = L.G;
+    const starts = cells(G, rectUV(w, r.u0 + 0.05, r.u1 - 0.05, 0.25, 0.75));
+    const ok = 'Clear walk from the door to the bed.', chair = 'Your walk to bed crosses the chair zone.';
+    const tries = seg ? [
+      [() => withSeg(G, G.withChair, seg[0], seg[1]), 'pass', ok],
+      [() => withSeg(G, G.base, seg[0], seg[1]), 'warn', chair],
+      [() => G.base, 'warn', 'The open door blocks the walk to bed. Close it behind you.'],
+    ] : [
+      [() => G.withChair, 'pass', ok],
+      [() => G.base, 'warn', chair],
+    ];
+    for (const [mk, st, msg] of tries) {
+      const grid = mk(), p = bfs(G, grid, starts);
+      if (p) { r.path = p; r.grid = grid; return [st, msg]; }
+    }
+    return ['fail', 'No clear walk from the door to the bed.'];
+  };
+
+  const evaluate = (L, key, s, side, quick, type = S.doorType) => {
+    const w = L.walls[key], dw = S.doorW, u0 = s - dw / 2, u1 = s + dw / 2;
+    const hu = side === 'a' ? u0 : u1;
+    const r = { key, s, hinge: side, type, u0, u1, C: pt(w, s, 0), Hh: pt(w, hu, 0), E: pt(w, hu, type === 'out' ? -dw : dw) };
+    const hard = [['desk', L.desk], ['bed', L.bed]];
+    const blk = hard.find(([, x]) => overlap(x, rectUV(w, u0, u1, 0, 0.05)));
+    let seg = null;
+    if (blk) r.swing = ['fail', `The ${blk[0]} blocks the opening.`];
+    else if (type === 'in') {
+      const sq = rectUV(w, u0, u1, 0, dw);
+      const hits = (x) => { const o = overlap(x, sq); return !!o && distPR(r.Hh, o) < dw - 1e-6; };
+      const hit = hard.find(([, x]) => hits(x));
+      r.swing = hit ? ['fail', `The door hits the ${hit[0]} as it opens.`]
+        : hits(L.chair) ? ['warn', 'The door swings into the chair zone.']
+        : ['pass', 'Opens a full 90° without touching anything.'];
+      seg = [r.Hh, r.E];
+    } else if (type === 'out') {
+      r.swing = ['pass', 'Swings into the hallway. Takes no floor inside.'];
+    } else {
+      r.park = side === 'a' ? [u0 - dw - 0.05, u0] : [u1, u1 + dw + 0.05];
+      const panel = rectUV(w, r.park[0], r.park[1], 0, PANEL);
+      const inWay = type === 'slide' && hard.find(([, x]) => overlap(x, panel));
+      if (r.park[0] < 0 || r.park[1] > w.len) r.swing = ['fail', `Not enough wall beside the opening for the ${type === 'pocket' ? 'pocket' : 'panel'}.`];
+      else if (inWay) r.swing = ['fail', `The ${inWay[0]} covers the wall where the panel parks.`];
+      else if (type === 'pocket') r.swing = ['pass', 'Slides into the wall. Takes no floor.'];
+      else { r.swing = ['pass', 'Slides along the wall. Takes 8 cm off that wall.']; seg = [pt(w, r.park[0], PANEL / 2), pt(w, r.park[1], PANEL / 2)]; }
+    }
+    r.walk = quick && r.swing[0] === 'fail' ? ['fail', ''] : walkCheck(L, w, r, seg);
+    const aB = ang(L.F, [r.C[0] - L.P[0], r.C[1] - L.P[1]]);
+    const foot = S.orient === 'back' ? 'top' : (S.side === 'right' ? 'left' : 'right');
+    const br = w.a[0] ? [L.mat.x, L.mat.x + L.mat.w] : [L.mat.y, L.mat.y + L.mat.h];
+    r.view = aB > 110 ? ['fail', 'Behind your head. You can’t see who comes in.']
+      : aB > 90 ? ['warn', 'At the edge of your view from the pillow.']
+      : key === foot && u1 > br[0] && u0 < br[1] ? ['warn', 'Your feet point straight at the door.']
+      : ['pass', `In view from the pillow, ${Math.round(aB)}° off straight ahead.`];
+    const aD = ang([0, -1], [r.C[0] - L.seat[0], r.C[1] - L.seat[1]]);
+    r.desk = aD > 135 ? ['fail', 'Directly behind your chair.']
+      : aD > 100 ? ['warn', 'Behind your shoulder while you work.']
+      : ['pass', 'In your side view while you work.'];
+    const band = rectUV(w, u0, u1, 0, w.a[0] ? S.D : S.W);
+    r.privacy = overlap(band, L.bed) ? ['warn', 'An open door gives a straight view of the bed.'] : ['pass', 'The bed stays out of the doorway view.'];
+    r.score = ['swing', 'walk', 'view', 'desk', 'privacy'].reduce((t, k) => t + PTS[r[k][0]], 0);
+    r.level = r.swing[0] === 'fail' || r.walk[0] === 'fail' ? 'bad' : r.score >= 9 ? 'good' : r.score >= 7 ? 'ok' : 'bad';
+    return r;
+  };
+
+  const rank = (h) => h.score - (h.level === 'bad' ? 10 : 0);
+  const evalBest = (L, key, s, quick, type = S.doorType) => {
+    const a = evaluate(L, key, s, 'a', quick, type), b = evaluate(L, key, s, 'b', quick, type);
+    return rank(b) > rank(a) ? b : a;
+  };
+  const range = (L, key) => [S.doorW / 2 + EDGE, L.walls[key].len - S.doorW / 2 - EDGE];
+
+  const heatmap = (L) => {
+    const out = [];
+    for (const key of ['top', 'left', 'bottom', 'right']) {
+      const [lo, hi] = range(L, key);
+      for (let i = 0; lo + i * STEP <= hi + 1e-9; i++) out.push(evalBest(L, key, +(lo + i * STEP).toFixed(3), true));
+    }
+    return out;
+  };
+
+  const bestSpot = (heat) => {
+    if (!heat.length) return null;
+    const max = Math.max(...heat.map(rank));
+    let best = [], run = [];
+    const flush = () => { if (run.length > best.length) best = run; run = []; };
+    for (const h of heat) {
+      if (rank(h) !== max) { flush(); continue; }
+      const p = run[run.length - 1];
+      if (p && !(p.key === h.key && Math.abs(p.s + STEP - h.s) < 1e-6)) flush();
+      run.push(h);
+    }
+    flush();
+    return best[Math.floor((best.length - 1) / 2)];
+  };
+
+  let cache = null;
+  const sig = () => [S.W, S.D, S.deskD, S.deskL, S.deskPos, S.bed, S.frame, S.orient, S.side, S.doorW, S.doorType].join('|');
+  const model = () => {
+    if (!cache || cache.sig !== sig()) {
+      const L = layout(), heat = heatmap(L);
+      cache = { sig: sig(), L, heat, best: bestSpot(heat) };
+    }
+    return cache;
+  };
+  const snapS = (L, key, s) => {
+    const [lo, hi] = range(L, key);
+    if (hi < lo) return +((lo + hi) / 2).toFixed(3);
+    return +clamp(lo + Math.round((s - lo) / STEP) * STEP, lo, hi).toFixed(3);
+  };
+  const place = (key, s) => {
+    const { L } = model();
+    const s2 = snapS(L, key, s);
+    S.door = { key, s: s2, hinge: evalBest(L, key, s2, false).hinge };
+  };
+  const useBest = (b) => { if (b) S.door = { key: b.key, s: b.s, hinge: b.hinge }; };
+
+  const R = (r, cls, extra = '') => `<rect x="${u(r.x)}" y="${u(r.y)}" width="${u(r.w)}" height="${u(r.h)}" class="${cls}" ${extra}/>`;
+  const T = (x, y, txt, cls = 'lbl', extra = '') => `<text x="${u(x)}" y="${u(y)}" class="${cls}" ${extra}>${txt}</text>`;
+  const Ln = (a, b, cls) => `<line x1="${u(a[0])}" y1="${u(a[1])}" x2="${u(b[0])}" y2="${u(b[1])}" class="${cls}"/>`;
+  const tick = (x, y) => Ln([x - 0.03, y + 0.03], [x + 0.03, y - 0.03], 'tk');
+  const dimH = (x0, x1, y, label) => Ln([x0, y], [x1, y], 'dim') + tick(x0, y) + tick(x1, y) + T((x0 + x1) / 2, y - 0.04, label, 'dimt', 'text-anchor="middle"');
+  const dimV = (y0, y1, x, label) => Ln([x, y0], [x, y1], 'dim') + tick(x, y0) + tick(x, y1)
+    + `<text transform="translate(${u(x - 0.04)} ${u((y0 + y1) / 2)}) rotate(-90)" class="dimt" text-anchor="middle">${label}</text>`;
+
+  const mapBed = (L, x, y) => {
+    const m = L.mat;
+    if (S.orient === 'back') return [m.x + m.w - x, m.y + m.h - y];
+    if (S.side === 'right') return [m.x + m.w - y, m.y + x];
+    return [m.x + y, m.y + m.h - x];
+  };
+  const bedSVG = (L) => {
+    const { b, mat: m } = L, bw = b.w, bl = b.l + HB, pw = (bw - 0.3) / 2;
+    const tr = S.orient === 'back' ? `translate(${u(m.x + m.w)} ${u(m.y + m.h)}) rotate(180)`
+      : S.side === 'right' ? `translate(${u(m.x + m.w)} ${u(m.y)}) rotate(90)`
+      : `translate(${u(m.x)} ${u(m.y + m.h)}) rotate(-90)`;
+    return `<g transform="${tr}">`
+      + R({ x: 0, y: 0, w: bw, h: bl }, 'bedf')
+      + R({ x: 0, y: 0, w: bw, h: HB }, 'hb')
+      + R({ x: 0.1, y: HB + 0.08, w: pw, h: 0.4 }, 'pillow', 'rx="6"')
+      + R({ x: 0.2 + pw, y: HB + 0.08, w: pw, h: 0.4 }, 'pillow', 'rx="6"')
+      + R({ x: 0.03, y: HB + 0.58, w: bw - 0.06, h: b.l - 0.61 }, 'duvet', 'rx="5"')
+      + Ln([0.03, HB + 0.78], [bw - 0.03, HB + 0.78], 'fold')
+      + '</g>';
+  };
+
+  const smooth = (G, grid, path) => {
+    const P = path.map((k) => cellPt(G, k));
+    const free = (x, y) => { const i = clamp(Math.floor(x / G.gx), 0, G.nx - 1), j = clamp(Math.floor(y / G.gy), 0, G.ny - 1); return grid[j * G.nx + i]; };
+    const clear = (a, b) => {
+      const n = Math.max(1, Math.ceil(Math.hypot(b[0] - a[0], b[1] - a[1]) / 0.02));
+      for (let t = 0; t <= n; t++) if (!free(a[0] + (b[0] - a[0]) * t / n, a[1] + (b[1] - a[1]) * t / n)) return false;
+      return true;
+    };
+    const out = [P[0]];
+    let i = 0;
+    while (i < P.length - 1) {
+      let j = P.length - 1;
+      while (j > i + 1 && !clear(P[i], P[j])) j--;
+      out.push(P[j]); i = j;
+    }
+    return out;
+  };
+
+  const doorSVG = (L, r) => {
+    const Wd = L.walls[r.key], dw = S.doorW;
+    let o = R(rectUV(Wd, r.u0, r.u1, -0.125, 0.004), 'floor');
+    o += Ln(pt(Wd, r.u0, -0.12), pt(Wd, r.u0, 0), 'jamb') + Ln(pt(Wd, r.u1, -0.12), pt(Wd, r.u1, 0), 'jamb');
+    if (r.type === 'in' || r.type === 'out') {
+      const O = pt(Wd, r.hinge === 'a' ? r.u1 : r.u0, 0);
+      const cr = (r.E[0] - r.Hh[0]) * (O[1] - r.Hh[1]) - (r.E[1] - r.Hh[1]) * (O[0] - r.Hh[0]);
+      const arc = `A${u(dw)} ${u(dw)} 0 0 ${cr > 0 ? 1 : 0} ${u(O[0])} ${u(O[1])}`;
+      o += `<path d="M${u(r.Hh[0])} ${u(r.Hh[1])} L${u(r.E[0])} ${u(r.E[1])} ${arc} Z" class="wedge"/>`;
+      o += `<path d="M${u(r.E[0])} ${u(r.E[1])} ${arc}" class="swing"/>`;
+      o += Ln(r.Hh, r.E, 'leaf') + `<circle cx="${u(r.Hh[0])}" cy="${u(r.Hh[1])}" r="2.6" class="hinge"/>`;
+    } else {
+      const p0 = clamp(r.park[0], 0, Wd.len), p1 = clamp(r.park[1], 0, Wd.len);
+      const lead = r.hinge === 'a' ? [p1 - dw, p1] : [p0, p0 + dw];
+      if (r.type === 'pocket') {
+        o += R(rectUV(Wd, p0, p1, -0.1, -0.02), 'pocket');
+        o += R(rectUV(Wd, r.u0, r.u1, -0.075, -0.045), 'ghost');
+        o += R(rectUV(Wd, lead[0], lead[1], -0.075, -0.045), 'panelf');
+      } else {
+        o += Ln(pt(Wd, Math.min(r.u0, p0), 0.02), pt(Wd, Math.max(r.u1, p1), 0.02), 'track');
+        o += R(rectUV(Wd, r.u0, r.u1, 0.025, PANEL), 'ghost');
+        o += R(rectUV(Wd, lead[0], lead[1], 0.025, PANEL), 'panelf');
+      }
+    }
+    return o;
+  };
+
+  const renderPlan = (L, heat, r) => {
+    const { W, D } = S, w = L.walls, ax = W / 2, sx = L.sx, m = L.mat;
+    const out = r.type === 'out';
+    const mL = out && r.key === 'left' ? 0.95 : 0.5, mR = out && r.key === 'right' ? 0.95 : 0.7;
+    const svg = $('plan');
+    svg.setAttribute('viewBox', [-mL, -0.5, W + mL + mR, D + 1.34].map(u).join(' '));
+    let o = '<defs><marker id="arr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arrow"/></marker></defs>';
+    o += R({ x: -0.12, y: -0.12, w: W + 0.24, h: D + 0.24 }, 'wall') + R({ x: 0, y: 0, w: W, h: D }, 'floor');
+    for (let x = 0.5; x < W - 1e-6; x += 0.5) o += Ln([x, 0], [x, D], 'grid');
+    for (let y = 0.5; y < D - 1e-6; y += 0.5) o += Ln([0, y], [W, y], 'grid');
+    for (const k of ['top', 'left', 'bottom', 'right']) o += R(rectUV(w[k], -0.12, w[k].len + 0.12, -0.21, -0.15), 'h-none');
+    for (const h of heat) o += R(rectUV(w[h.key], h.s - STEP / 2, h.s + STEP / 2, -0.21, -0.15), `h-${h.level}`);
+    o += T(ax, -0.29, L.full ? 'DESK WALL · DESK RUNS WALL TO WALL' : 'DESK WALL', 'lbl', 'text-anchor="middle"');
+    o += T(ax, D + 0.33, 'BACK WALL', 'lbl', 'text-anchor="middle"');
+    o += `<text transform="translate(${u(-0.29)} ${u(D / 2)}) rotate(-90)" class="lbl" text-anchor="middle">LEFT WALL</text>`;
+    o += `<text transform="translate(${u(W + 0.29)} ${u(D / 2)}) rotate(90)" class="lbl" text-anchor="middle">RIGHT WALL</text>`;
+    o += dimH(0, W, D + 0.55, mt(W)) + dimV(0, D, W + 0.55, mt(D));
+    o += T(ax, D + 0.75, `ROOM ${sqm(W * D)}`, 'lbl lbl-ink', 'text-anchor="middle"');
+
+    for (const dx of [-0.26, 0, 0.26]) o += Ln([sx + dx, 0.24], [sx + dx * 2.6, 1.45], 'air');
+    o += R(L.desk, 'deskf');
+    o += R({ x: sx - SCREEN.w / 2, y: SCREEN.y - 0.02, w: SCREEN.w, h: 0.035 }, 'mon');
+    o += R({ x: sx - 0.4, y: 0.01, w: 0.8, h: 0.22 }, 'over', 'rx="2"');
+    o += T(sx, 0.205, 'AC ABOVE', 'lbl', 'text-anchor="middle"');
+    o += T(L.desk.x + 0.08, S.deskD - 0.08, `DESK ${Math.round(L.desk.w * 100)} × ${Math.round(S.deskD * 100)} · ${sqm(L.desk.w * S.deskD)}`, 'lbl lbl-ink');
+    o += R(L.chair, 'zone');
+    o += R({ x: sx - 0.26, y: S.deskD + 0.06, w: 0.52, h: 0.48 }, 'chairf', 'rx="8"');
+    o += T(sx, L.chair.y + L.chair.h - 0.07, 'CHAIR ZONE 90', 'lbl', 'text-anchor="middle"');
+
+    if (L.w2w) {
+      o += R(L.bed, 'plat');
+      for (const [a, c] of L.spares) {
+        if (c - a <= 0.1) continue;
+        const ex = { x: a + 0.03, y: L.bed.y + 0.03, w: c - a - 0.06, h: L.bed.h - 0.06 };
+        o += R(ex, 'bench', 'rx="3"');
+        const cx = ex.x + ex.w / 2, cy = ex.y + ex.h / 2;
+        o += T(cx, cy - 0.02, L.benchWord.toUpperCase(), 'lbl lbl-ink', 'text-anchor="middle"');
+        o += T(cx, cy + 0.11, c - a < 0.55 ? `${Math.round((c - a) * 100)}` : `${Math.round((c - a) * 100)} × ${Math.round(L.bed.h * 100)}`, 'dimt', 'text-anchor="middle"');
+      }
+    }
+    o += bedSVG(L);
+    const bc = mapBed(L, L.b.w / 2, HB + 0.58 + (L.b.l - 0.61) / 2 + 0.1);
+    o += T(bc[0], bc[1] - 0.02, L.b.name.toUpperCase(), 'lbl lbl-ink', 'text-anchor="middle"');
+    o += T(bc[0], bc[1] + 0.11, L.b.size.replace(' cm', ''), 'dimt', 'text-anchor="middle"');
+    o += T(bc[0], bc[1] + 0.22, sqm(L.b.w * L.b.l), 'dimt', 'text-anchor="middle"');
+
+    for (const [a, c] of L.spares) {
+      if (c - a <= 0.08) continue;
+      const y = L.w2w ? L.bed.y + 0.2 : S.orient === 'back' ? m.y + m.h * 0.72 : m.y + m.h * 0.5;
+      o += dimH(a, c, y, cm(c - a));
+    }
+    if (L.gap > 0.08) o += dimV(S.deskD, L.bed.y, S.side === 'left' ? m.x + m.w * 0.18 : m.x + m.w * 0.82, mt(L.gap));
+
+    o += doorSVG(L, r);
+    o += Ln(L.P, r.C, `sight s-${r.view[0]}`) + Ln(L.seat, r.C, `sight s-${r.desk[0]}`);
+    o += `<circle cx="${u(L.P[0])}" cy="${u(L.P[1])}" r="2.4" class="eyept"/><circle cx="${u(L.seat[0])}" cy="${u(L.seat[1])}" r="2.4" class="eyept"/>`;
+    if (r.path) {
+      const pts = [r.C, ...smooth(L.G, r.grid, r.path)];
+      o += `<polyline points="${pts.map((p) => `${u(p[0])},${u(p[1])}`).join(' ')}" class="walk" marker-end="url(#arr)"/>`;
+    }
+    for (const k of ['top', 'left', 'bottom', 'right']) o += R(rectUV(w[k], -0.1, w[k].len + 0.1, -0.32, 0.3), 'hit');
+    const dk = L.desk, dpos = L.full ? 'center' : S.deskPos;
+    for (const g of dpos === 'left' ? ['r'] : dpos === 'right' ? ['l'] : ['l', 'r']) {
+      const gx = g === 'l' ? Math.max(dk.x, 0.07) : Math.min(dk.x + dk.w, W - 0.07);
+      o += R({ x: gx - 0.025, y: dk.h / 2 - 0.15, w: 0.05, h: 0.3 }, 'grip', 'rx="2.5"');
+      o += R({ x: gx - 0.12, y: 0.05, w: 0.24, h: dk.h - 0.1 }, 'griphit', `data-grip="${g}"`);
+    }
+    svg.innerHTML = o;
+  };
+
+  const renderElev = (L) => {
+    const W = S.W, H = S.H, ax = L.sx, Y = (h) => H - h;
+    const acT = H - 0.2, acB = acT - 0.29, acOut = acB + 0.04, area = W * S.D;
+    const svg = $('elev');
+    svg.setAttribute('viewBox', [-0.52, -0.26, W + 2.12, H + 0.82].map(u).join(' '));
+    let o = '';
+    o += R({ x: -0.12, y: -0.12, w: W + 0.24, h: 0.12 }, 'wall') + R({ x: -0.12, y: H, w: W + 0.24, h: 0.12 }, 'wall');
+    o += R({ x: -0.12, y: 0, w: 0.12, h: H }, 'wall') + R({ x: W, y: 0, w: 0.12, h: H }, 'wall');
+    o += R({ x: 0, y: 0, w: W, h: H }, 'face');
+    o += Ln([0.04, Y(1.2)], [W - 0.04, Y(1.2)], 'eye');
+    o += R({ x: ax - 0.4, y: Y(acT), w: 0.8, h: 0.29 }, 'acu', 'rx="3"');
+    o += Ln([ax - 0.34, Y(acB + 0.06)], [ax + 0.34, Y(acB + 0.06)], 'vent');
+    o += T(ax, Y(acB) + 0.13, `SPLIT AC · ${hp(area).toFixed(1)} HP`, 'lbl', 'text-anchor="middle"');
+    o += R({ x: ax + 0.5, y: Y(acOut + 0.04), w: 0.07, h: 0.08 }, 'outlet', 'rx="1"');
+    o += R({ x: ax - SCREEN.w / 2, y: Y(SCREEN.bottom + SCREEN.h), w: SCREEN.w, h: SCREEN.h }, 'screen', 'rx="1.5"');
+    o += R({ x: ax - 0.045, y: Y(1.24), w: 0.09, h: 0.07 }, 'hidden', 'rx="1"');
+    o += R({ x: L.desk.x, y: Y(0.75), w: L.desk.w, h: 0.03 }, 'deskf');
+    o += `<ellipse cx="${u(ax)}" cy="${u(Y(0.05))}" rx="${u(0.3)}" ry="${u(0.03)}" class="chairf"/>`;
+    o += R({ x: ax - 0.02, y: Y(0.52), w: 0.04, h: 0.46 }, 'chairf');
+    o += R({ x: ax - 0.24, y: Y(1.0), w: 0.48, h: 0.48 }, 'chairf', 'rx="7"');
+    const lvl = (h, label) => {
+      const y = Y(h);
+      return Ln([W + 0.12, y], [W + 0.3, y], 'lvl')
+        + `<path d="M${u(W + 0.2)} ${u(y)} l-3.5 -5 h7 z" class="lvlm"/>`
+        + `<text x="${u(W + 0.34)}" y="${u(y + 0.03)}" class="lbl"><tspan class="lvn">${h === 0 ? '±0.00' : '+' + h.toFixed(2)}</tspan> ${label}</text>`;
+    };
+    o += lvl(0, 'FLOOR') + lvl(0.75, 'DESK TOP') + lvl(1.2, 'EYE, SEATED') + lvl(acB, 'AC UNDERSIDE') + lvl(acT, 'AC TOP') + lvl(H, 'CEILING');
+    o += dimV(0, H, -0.3, mt(H)) + dimH(L.desk.x, L.desk.x + L.desk.w, H + 0.24, `desk ${cm(L.desk.w)}`) + dimH(0, W, H + 0.46, mt(W));
+    svg.innerHTML = o;
+
+    const pd = Math.hypot(L.P[0] - ax, L.P[1]);
+    $('notes').innerHTML = [
+      ['+0.75', `Desk top. One 3 cm slab, ${Math.round(L.desk.w * 100)} × ${Math.round(S.deskD * 100)} cm, on hidden brackets. No legs.`],
+      ['+1.00', 'Screen bottom, level with the chair back. From bed the chair never blocks the view.'],
+      ['+1.20', 'Desk outlet behind the screen. Cables stay out of sight.'],
+      ['+1.27', `Screen center, a little above seated eye level. 42–43 in on a wall arm: ${cm(S.deskD + 0.25 - SCREEN.y)} from the chair, ${mt(L.screenDist)} from the pillow.`],
+      [`+${acOut.toFixed(2)}`, 'Dedicated AC outlet, right of the unit.'],
+      [`+${acT.toFixed(2)}`, 'AC top, 20 cm below the ceiling. Under 15 cm starves the air intake.'],
+      ['Wall', 'Make this an outside wall. The pipes then run straight out to the outdoor unit.'],
+      ['Air', `The pillow sits ${pd.toFixed(1)} m from the unit. Set the louvers level so cold air lands mid-room, not on your face.`],
+    ].map(([k, t]) => `<li><span class="lv">${k}</span><span>${t}</span></li>`).join('');
+  };
+
+  const deskWhy = (L) => {
+    if (L.full) return 'Wall to wall, top at 75 cm. No legs to clean around.';
+    const left = L.desk.x, right = S.W - L.desk.x - L.desk.w;
+    if (S.deskPos === 'center') return `Centered under the screen and AC, on the bed’s center line. ${cm(left)} of bare wall each side.`;
+    return `Pushed to the ${S.deskPos} wall. ${cm(Math.max(left, right))} of bare wall on the other side.`;
+  };
+
+  const renderKit = (L) => {
+    const area = S.W * S.D, h = hp(area);
+    const spareTxt = L.spares.length > 1 ? `The ${cm(L.spareW)} ledge on each side holds a lamp and your phone` : `The ${cm(L.spareW)} ${L.benchWord} holds a lamp and books`;
+    const bedRow = L.w2w
+      ? [`${L.b.name} on a wall-to-wall platform`, `Platform ${Math.round(S.W * 100)} × ${Math.round(L.bed.h * 100)} cm<br>Mattress ${L.b.size}<br>${sqm(L.bed.w * L.bed.h)}`, `Lift-up storage under the mattress replaces a wardrobe. ${spareTxt}, so no nightstands.`]
+      : [`${L.b.name} bed, lift-up storage frame`, `${L.b.size}<br>${L.b.inch}<br>${sqm(L.b.w * L.b.l)}`, 'Storage under the mattress replaces a wardrobe. Nothing slides out into the aisle.'];
+    $('kit').innerHTML = [
+      bedRow,
+      ['Floating desk', `${Math.round(L.desk.w * 100)} × ${Math.round(S.deskD * 100)} cm<br>${sqm(L.desk.w * S.deskD)}`, deskWhy(L)],
+      ['Task chair', '90 cm pull-out', 'Black, as in your sketch. Keep the chair zone clear.'],
+      ['42–43 in 4K screen on a wall arm', '95 × 54 cm', `One screen for work and for watching from bed, ${mt(L.screenDist)} away. Your sketch draws it this size.`],
+      [`Split AC, ${h.toFixed(1)} HP inverter`, '≈ 80 × 29 cm', `Covers up to about ${HP_MAX[h]} m². This room is ${area.toFixed(1)} m².`],
+      [`${TYPES[S.doorType].name} door`, `${Math.round(S.doorW * 100)} × 210 cm`, TYPES[S.doorType].kit],
+      ...(L.w2w ? [] : [['Headboard ledge', '15 cm deep', 'Phone and water within reach. Nothing on the floor.']]),
+      ['One ceiling light', 'Warm white, 3000 K', 'Switch by the door on the latch side, 1.20 m up.'],
+    ].map(([a, b, c]) => `<tr><td class="it">${a}</td><td class="sz">${b}</td><td>${c}</td></tr>`).join('');
+  };
+
+  const fitStatus = (L) => {
+    if (L.spareW < -1e-6) return { st: 'fail', word: 'No fit', sub: `The bed needs ${cm(-L.spareW)} more width.` };
+    if (L.gap < 0) return { st: 'fail', word: 'No fit', sub: `Room is ${cm(-L.gap)} too shallow.` };
+    const a = L.w2w ? 'pass' : L.spareW < 0.6 ? 'fail' : L.spareW < 0.7 ? 'warn' : 'pass';
+    const g = L.gap < 0.75 ? 'fail' : L.gap < 0.9 ? 'warn' : 'pass';
+    const st = [a, g].includes('fail') ? 'fail' : [a, g].includes('warn') ? 'warn' : 'pass';
+    const each = L.spares.length > 1 ? ' each side' : '';
+    const spare = L.w2w ? `${cm(L.spareW)} ${L.benchWord}${each}` : `${cm(L.spareW)} aisle${each}`;
+    return { st, word: { pass: 'Fits', warn: 'Tight', fail: 'Too tight' }[st], sub: `${spare} · ${mt(L.gap)} desk to bed` };
+  };
+
+  const openNote = (L, e) => {
+    if (e.swing[0] === 'fail') return 'Doesn’t fit here.';
+    if (e.type === 'out') return 'Sits in the hallway.';
+    if (e.type === 'pocket') return 'Nothing. The panel hides in the wall.';
+    if (e.type === 'slide') return 'Nothing. The panel parks flat on the wall.';
+    if (e.walk[1].startsWith('The open door')) return 'Blocks your walk to bed.';
+    const n = 20;
+    let near = 0;
+    for (let i = 0; i <= n; i++) if (distPR([e.Hh[0] + (e.E[0] - e.Hh[0]) * i / n, e.Hh[1] + (e.E[1] - e.Hh[1]) * i / n], L.desk) < 0.15) near++;
+    if (near > 2) return `Rests across ${cm(S.doorW * near / (n + 1))} of the desk front.`;
+    if (e.swing[0] === 'warn') return 'Rests in the chair zone.';
+    return 'Rests in open floor.';
+  };
+
+  const renderDoorTypes = (L) => {
+    const inCost = Math.PI * S.doorW ** 2 / 4;
+    $('doorTypes').innerHTML = Object.entries(TYPES).map(([t, ty]) => {
+      const e = evalBest(L, S.door.key, S.door.s, false, t);
+      const floor = t === 'in' ? inCost : t === 'slide' ? S.doorW * PANEL : 0;
+      const cur = t === S.doorType;
+      const spot = e.swing[0] === 'fail' ? e.swing[1] : `${e.score}/10 on the ${L.walls[e.key].name.toLowerCase()}`;
+      return `<tr${cur ? ' class="cur"' : ''}><td class="it">${ty.name}</td>`
+        + `<td class="sz">${sqm(floor)}${floor > 0 ? `<br>${Math.round(floor / L.free * 100)}% of free floor` : ''}</td>`
+        + `<td>${openNote(L, e)}</td>`
+        + `<td><span class="pill p-${ty.seal[0]}">${ty.seal[1]}</span></td>`
+        + `<td>${ty.needs}</td>`
+        + `<td><span class="pill p-${LV[e.level]}">${LV_WORD[e.level]}</span><span class="spot">${spot}</span></td>`
+        + `<td>${cur ? '<span class="inuse">In use</span>' : `<button type="button" class="sm" data-type="${t}">Use</button>`}</td></tr>`;
+    }).join('');
+    $('doorVerdict').innerHTML = `<p style="margin:0"><b>Pick the pocket door.</b> Open, it hides in the wall and blocks nothing. Closed, it shuts the room for the AC. It needs a pocket frame built into the wall beside the opening, so decide before that wall is finished.</p>`
+      + `<p style="margin:0">Wall already built in concrete block? Swing the door out, if the hallway has 90 cm clear. Swing-in is the fallback. It takes ${sqm(inCost)}, ${Math.round(inCost / L.free * 100)}% of your ${sqm(L.free)} free floor. A slide mounted inside the room needs 85 cm of bare wall beside the door, and it leaks the most cold air.</p>`;
+  };
+
+  const renderPanel = (L, r) => {
+    const fit = fitStatus(L), area = S.W * S.D;
+    $('sumFit').innerHTML = `<span class="pill p-${fit.st}">${fit.word}</span>${L.b.name}`;
+    $('sumFitSub').textContent = fit.sub;
+    $('sumArea').textContent = sqm(area);
+    $('sumAreaSub').textContent = `${sqm(L.free)} free floor (${Math.round(L.free / area * 100)}%)`;
+    $('roomArea').textContent = `= ${sqm(area)} room area`;
+    $('sumMin').textContent = `${L.widthNeed.toFixed(2)} × ${L.depthNeed.toFixed(2)} m`;
+    $('sumMinSub').textContent = `${sqm(L.widthNeed * L.depthNeed)} for this layout`;
+    $('sumDoor').innerHTML = `<span class="pill p-${LV[r.level]}">${LV_WORD[r.level]}</span>${r.score}/10`;
+    $('sumDoorSub').textContent = `${TYPES[r.type].name} · ${L.walls[r.key].name}, ${cm(r.u0)} to ${cm(r.u1)}`;
+    $('sumAc').textContent = `${hp(area).toFixed(1)} HP`;
+    $('sumAcSub').textContent = `Inverter split · ${area.toFixed(1)} m² room`;
+    $('sideLbl').textContent = S.orient === 'side' ? 'Headboard on' : L.w2w ? 'Mattress on' : 'Bed against';
+    const sa = Math.round(L.screenAng);
+    $('bedRead').innerHTML = sa < 15 ? `<b>Faces the screen.</b> Pillow to screen: ${mt(L.screenDist)}, straight ahead.`
+      : sa < 50 ? `<b>Screen ${sa}° off center</b> from the pillow, ${mt(L.screenDist)} away.`
+      : `<b>Screen out of view</b> from the pillow, ${sa}° to the side.`;
+    $('btnFlip').textContent = r.type === 'in' || r.type === 'out' ? 'Flip hinge' : 'Flip slide side';
+
+    const across = r.key === 'bottom' || r.key === 'top';
+    const w = L.walls[r.key], ends = across ? ['left', 'right'] : ['desk', 'back'];
+    const touches = r.key === 'left' ? L.desk.x < 0.01 : r.key === 'right' ? L.desk.x + L.desk.w > S.W - 0.01 : false;
+    const fromA = r.u0, fromB = w.len - r.u1;
+    let where = fromA <= fromB ? `${cm(fromA)} from the ${ends[0]}-wall corner` : `${cm(fromB)} from the ${ends[1]}-wall corner`;
+    if (touches && fromA <= fromB && r.u0 >= S.deskD) where +=` (${cm(r.u0 - S.deskD)} past the desk)`;
+    const hs = r.hinge === 'a' ? ends[0] : ends[1], ls = r.hinge === 'a' ? ends[1] : ends[0];
+    const how = {
+      in: `Hinge on the ${hs} side, opens into the room.`,
+      out: `Hinge on the ${hs} side, opens out into the hallway.`,
+      pocket: `Slides into the wall on the ${hs} side.`,
+      slide: `Slides along the wall toward the ${hs} side.`,
+    }[r.type];
+    $('doorRead').innerHTML = `<b>${w.name}</b>, ${where}. ${how} Light switch on the ${ls} side, 1.20 m up.`;
+    $('checks').innerHTML = [['Opening', r.swing], ['Walk to bed', r.walk], ['View from bed', r.view], ['At the desk', r.desk], ['Privacy', r.privacy]]
+      .map(([t, [st, m]]) => `<li><span class="pill p-${st}">${ST_WORD[st]}</span><div><b>${t}</b><span class="m">${m}</span></div></li>`).join('');
+  };
+
+  const syncDoor = (skipSlider) => {
+    const { L } = model(), [lo, hi] = range(L, S.door.key);
+    document.querySelectorAll('input[name="dwall"]').forEach((el) => { el.checked = el.value === S.door.key; });
+    document.querySelectorAll('input[name="dtype"]').forEach((el) => { el.checked = el.value === S.doorType; });
+    if (!skipSlider) $('doorPos').value = hi > lo ? Math.round((S.door.s - lo) / (hi - lo) * 1000) : 500;
+    $('doorPosOut').textContent = `${cm(S.door.s - S.doorW / 2)} from ${S.door.key === 'bottom' || S.door.key === 'top' ? 'left' : 'desk wall'}`;
+  };
+
+  let flashT = 0;
+  const flash = (msg) => { $('flash').textContent = msg; clearTimeout(flashT); flashT = setTimeout(() => { $('flash').textContent = ''; }, 3200); };
+
+  const render = (skipSlider) => {
+    if (S.orient === 'side' && S.side === 'center') S.side = 'right';
+    $('sdCenter').disabled = S.orient === 'side';
+    document.querySelectorAll('input[name="side"]').forEach((el) => { el.checked = el.value === S.side; });
+    const { L, heat, best } = model();
+    $('posL').disabled = $('posC').disabled = $('posR').disabled = !(S.deskL > 0 && S.deskL < S.W);
+    if (!S.door || !['top', 'left', 'bottom', 'right'].includes(S.door.key)) useBest(best || { key: 'left', s: 1, hinge: 'a' });
+    S.door.s = snapS(L, S.door.key, S.door.s);
+    if (S.door.hinge !== 'a' && S.door.hinge !== 'b') S.door.hinge = 'a';
+    const r = evaluate(L, S.door.key, S.door.s, S.door.hinge, false);
+    renderPlan(L, heat, r);
+    renderPanel(L, r);
+    renderDoorTypes(L);
+    renderElev(L);
+    renderKit(L);
+    syncDoor(skipSlider);
+    if (document.activeElement !== $('inDl')) $('inDl').value = L.desk.w.toFixed(2);
+    document.querySelectorAll('input[name="deskL"]').forEach((el) => { const v = parseFloat(el.value); el.checked = v === 0 ? L.full : !L.full && Math.abs(v - L.desk.w) < 0.001; });
+    document.querySelectorAll('input[name="deskPos"]').forEach((el) => { el.checked = el.value === S.deskPos; });
+    save();
+  };
+
+  const plan = $('plan');
+  let drag = null, raf = 0;
+  const soon = () => { if (raf) return; raf = requestAnimationFrame(() => { raf = 0; render(); }); };
+  const resizeDesk = (x) => {
+    const W = S.W, pos = S.deskL > 0 && S.deskL < W ? S.deskPos : 'center';
+    const raw = pos === 'center' ? 2 * Math.abs(x - W / 2) : pos === 'left' ? x : W - x;
+    const len = clamp(Math.round(raw / 0.05) * 0.05, 0.8, W);
+    S.deskPos = pos;
+    S.deskL = len >= W - 0.001 ? 0 : +len.toFixed(2);
+  };
+  const toRoom = (e) => {
+    const m = plan.getScreenCTM(); if (!m) return null;
+    const p = plan.createSVGPoint(); p.x = e.clientX; p.y = e.clientY;
+    const q = p.matrixTransform(m.inverse());
+    return [q.x / 100, q.y / 100];
+  };
+  const nearest = ([x, y], allowTop) => {
+    const c = [['left', Math.abs(x), y], ['right', Math.abs(x - S.W), y], ['bottom', Math.abs(y - S.D), x]];
+    if (allowTop) c.push(['top', Math.abs(y), x]);
+    return c.sort((a, b) => a[1] - b[1])[0];
+  };
+  plan.addEventListener('pointerdown', (e) => {
+    const p = toRoom(e); if (!p) return;
+    if (e.target.getAttribute && e.target.getAttribute('data-grip')) drag = 'desk';
+    else {
+      const [k, d, s] = nearest(p, true);
+      if (d > 0.4) return;
+      drag = 'door';
+      place(k, s); render();
+    }
+    try { plan.setPointerCapture(e.pointerId); } catch (err) {}
+    e.preventDefault();
+  });
+  plan.addEventListener('pointermove', (e) => {
+    if (!drag) return;
+    const p = toRoom(e); if (!p) return;
+    if (drag === 'desk') resizeDesk(p[0]);
+    else { const [k, , s] = nearest(p, true); place(k, s); }
+    soon();
+  });
+  const stop = () => { drag = null; };
+  plan.addEventListener('pointerup', stop);
+  plan.addEventListener('pointercancel', stop);
+  plan.addEventListener('keydown', (e) => {
+    const d = { ArrowLeft: -1, ArrowUp: -1, ArrowRight: 1, ArrowDown: 1 }[e.key];
+    if (!d) return;
+    e.preventDefault();
+    place(S.door.key, S.door.s + d * STEP); render();
+  });
+
+  const num = (id, key, lo, hi) => {
+    const el = $(id);
+    el.value = S[key].toFixed(2);
+    el.addEventListener('input', () => {
+      const v = parseFloat(el.value);
+      if (!Number.isFinite(v) || v < lo || v > hi) return;
+      S[key] = v; render();
+    });
+  };
+  num('inW', 'W', 1.8, 6); num('inD', 'D', 2.4, 8); num('inH', 'H', 2.3, 4); num('inDk', 'deskD', 0.4, 1);
+  $('inDl').addEventListener('input', () => {
+    const v = parseFloat($('inDl').value);
+    if (!Number.isFinite(v) || v < 0.8 || v > S.W) return;
+    if (!(S.deskL > 0 && S.deskL < S.W)) S.deskPos = 'center';
+    S.deskL = v >= S.W - 0.005 ? 0 : +v.toFixed(2);
+    render();
+  });
+
+  const radios = (name, key, parse = (v) => v, after) => {
+    document.querySelectorAll(`input[name="${name}"]`).forEach((el) => {
+      el.checked = String(S[key]) === el.value;
+      el.addEventListener('change', () => { if (!el.checked) return; S[key] = parse(el.value); if (after) after(); render(); });
+    });
+  };
+  const repick = () => place(S.door.key, S.door.s);
+  radios('deskL', 'deskL', parseFloat); radios('deskPos', 'deskPos');
+  radios('bed', 'bed'); radios('frame', 'frame'); radios('orient', 'orient'); radios('side', 'side');
+  radios('dw', 'doorW', parseFloat); radios('dtype', 'doorType', (v) => v, repick);
+
+  document.querySelectorAll('input[name="dwall"]').forEach((el) => el.addEventListener('change', () => {
+    if (!el.checked) return;
+    const { heat, L } = model();
+    const b = bestSpot(heat.filter((h) => h.key === el.value));
+    if (b) useBest(b); else place(el.value, L.walls[el.value].len / 2);
+    render();
+  }));
+  $('doorPos').addEventListener('input', (e) => {
+    const { L } = model(), [lo, hi] = range(L, S.door.key);
+    place(S.door.key, lo + (hi - lo) * e.target.value / 1000); render(true);
+  });
+  $('doorTypes').addEventListener('click', (e) => {
+    const b = e.target.closest('button[data-type]');
+    if (!b) return;
+    S.doorType = b.dataset.type; repick(); render();
+  });
+  $('btnBest').addEventListener('click', () => { useBest(model().best); render(); flash(''); });
+  $('btnFlip').addEventListener('click', () => { S.door.hinge = S.door.hinge === 'a' ? 'b' : 'a'; render(); });
+
+  render();
+})();
+</script>
+
+</html>
